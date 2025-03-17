@@ -1,0 +1,93 @@
+/* SimpleForm.css */
+.form-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
+}
+
+.input-container {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2px solid black;
+}
+
+/* .input-field {
+  padding: 10px;
+  color: black;
+  margin-top: 10px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid white;
+} */
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="password"]
+ {
+  padding: 10px;
+  color: white;
+  margin-top: 10px;
+  background: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid white;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 18px;
+}
+
+.label {
+  color: white;
+}
+
+.form-container label {
+  color: black;
+}
+
+.form-container .error-msg {
+  color: red;
+}
+
+.error {
+  color: red;             
+  font-size: 12px;        
+  margin-top: 5px;      
+  margin-bottom: 10px;    
+  font-weight: bold;      
+  display: inline-block;  
+}
+
+.input-phNumbers{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ph-button{
+  padding:5px 8px;
+  height: fit-content;
+}
+
+.submit{
+  background: rgb(33, 33, 207);
+  color: white;  
+  outline: none;
+  border: none;
+  transition: 0.2s ease-in-out;
+  margin-top: 20px;
+}
+
+.submit:hover{
+  background: rgb(33, 33, 255);
+
+}

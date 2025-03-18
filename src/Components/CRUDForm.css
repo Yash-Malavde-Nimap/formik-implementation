@@ -1,0 +1,162 @@
+/* Container for the entire form */
+.form-container {
+  background-color: #b6a78e;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center content horizontally */
+}
+
+/* Heading styles */
+h2 {
+  text-align: center;
+  color: #4caf50;
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+/* Form wrapper */
+.form-wrapper {
+  background-color: #eaeaea;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 500px; /* Make sure the form doesn't stretch too much */
+  margin-bottom: 30px; /* Some space between the form and the user cards */
+}
+
+/* Form styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%; /* Ensure the form takes up full width inside the wrapper */
+}
+
+/* Input Fields */
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="number"]:focus {
+  border-color: #4caf50;
+  outline: none;
+}
+
+/* Submit Button */
+.submit-button {
+  padding: 12px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.submit-button:hover {
+  background-color: #45a049;
+}
+
+.submit-button:focus {
+  outline: none;
+}
+
+/* Displayed data list */
+.data-list {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap; /* Allow the cards to wrap */
+  gap: 20px;
+  justify-content: center; /* Center the user cards */
+  width: fit-content;
+}
+
+/* Data item card styles */
+.data-item {
+  background-color: #7d7d7d;
+  padding: 15px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: 2px solid black;
+  width: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start; /* Align content to the left */
+}
+
+/* User data text */
+.data-item p {
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0;
+  flex-grow: 1;
+}
+
+/* Action buttons (Edit, Delete) */
+.action-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Edit and Delete buttons */
+.edit-button,
+.delete-button {
+  padding: 8px 15px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button {
+  background-color: #4caf50;
+  color: white;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button {
+  background-color: #f44336;
+  color: white;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+}
+
+/* Additional Styling for Form Validation */
+input.error {
+  border-color: #f44336;
+}
+
+.error-message {
+  color: #f44336;
+  font-size: 0.875rem;
+  margin-top: -12px;
+}

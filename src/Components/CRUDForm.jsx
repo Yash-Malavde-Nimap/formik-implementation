@@ -16,14 +16,15 @@ function CRUDForm() {
   const [editData, setEditData] = useState(initialValues);
 
   const validationSchema = Yup.object({
-    username: Yup.string().required("Username is Required"),
-    email: Yup.string().email("Invalid Email").required("Email is Required"),
+    username: Yup.string().required("*Username is Required"),
+    email: Yup.string().email("Invalid Email").required("*Email is Required"),
     age: Yup.number()
-      .required("Age is Required")
+      .required("*Age is Required")
       .positive("Age must be a positive number")
       .integer("Age must be an integer"),
   });
 
+  //
   const onSubmit = (values, { resetForm }) => {
     if (editIndex !== null) {
       const updatedData = [...formData];
@@ -48,52 +49,62 @@ function CRUDForm() {
 
   return (
     <div className="form-container">
-      <h2>Formik CRUD Operations</h2>
-      <Formik
-        initialValues={editIndex != null ? editData : initialValues}
-        enableReinitialize={true}
-        validationSchema={validationSchema}
-        onSubmit={onSubmit}
+      <div
         style={{
           display: "flex",
+          flexDirection: "column",
           justifyContent: "center",
           alignItems: "center",
         }}
       >
-        {() => (
-          <div className="form-wrapper">
-            <Form className="form">
-              <FormikControl
-                control="input"
-                type="text"
-                name="username"
-                label="Username"
-                autoComplete="off"
-              />
+        <h2>Formik CRUD Operations</h2>
 
-              <FormikControl
-                control="input"
-                type="email"
-                name="email"
-                label="Email"
-                autoComplete="off"
-              />
+        <Formik
+          initialValues={editIndex != null ? editData : initialValues}
+          enableReinitialize={true}
+          validationSchema={validationSchema}
+          onSubmit={onSubmit}
+          // style={{
+          //   display: "flex",
+          //   justifyContent: "center",
+          //   alignItems: "center",
+          // }}
+        >
+          {() => (
+            <div className="form-wrapper">
+              <Form className="form">
+                <FormikControl
+                  control="input"
+                  type="text"
+                  name="username"
+                  label="Username"
+                  autoComplete="off"
+                />
 
-              <FormikControl
-                control="input"
-                type="number"
-                name="age"
-                label="Age"
-                autoComplete="off"
-              />
+                <FormikControl
+                  control="input"
+                  type="email"
+                  name="email"
+                  label="Email"
+                  autoComplete="off"
+                />
 
-              <button type="submit" className="submit-button">
-                {editIndex !== null ? "Update" : "Add"}
-              </button>
-            </Form>
-          </div>
-        )}
-      </Formik>
+                <FormikControl
+                  control="input"
+                  type="number"
+                  name="age"
+                  label="Age"
+                  autoComplete="off"
+                />
+
+                <button type="submit" className="submit-button">
+                  {editIndex !== null ? "Update" : "Add"}
+                </button>
+              </Form>
+            </div>
+          )}
+        </Formik>
+      </div>
 
       <div className="data-list">
         <h2>List of Users</h2>
@@ -104,7 +115,7 @@ function CRUDForm() {
               gap: "20px",
               flexWrap: "wrap",
               justifyContent: "center",
-              marginTop: "20px",
+              // marginTop: "20px",
             }}
           >
             {formData.map((data, index) => (

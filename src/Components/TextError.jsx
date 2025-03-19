@@ -1,12 +1,12 @@
-
 function TextError() {
   return (
-    <div style={{
-        color:'red'
-    }}>
-        Required
+    <div
+      style={{
+        color: "red",
+      }}
+    >
     </div>
-  )
+  );
 }
 
-export default TextError
+export default TextError;

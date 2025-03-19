@@ -1,43 +1,49 @@
-/* Container for the entire form */
+/* Overall Container */
 .form-container {
-  background-color: #b6a78e;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  width: 100vw;
-  min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center; /* Center content horizontally */
-}
-
-/* Heading styles */
-h2 {
-  text-align: center;
-  color: #4caf50;
-  font-size: 2rem;
-  margin-bottom: 30px;
-}
-
-/* Form wrapper */
-.form-wrapper {
-  background-color: #eaeaea;
-  padding: 30px;
-  border-radius: 8px;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   width: 100%;
-  max-width: 500px; /* Make sure the form doesn't stretch too much */
-  margin-bottom: 30px; /* Some space between the form and the user cards */
+  min-height: 100vh;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow: hidden; /* Prevent horizontal overflow */
+  gap: 40px; /* Space between form and user list */
+  background-color: #a0c3e3;
 }
 
-/* Form styles */
-.form {
+/* Left Section (Form) */
+.form-wrapper {
+  background-color: #ffffff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  width: 75%; /* Form takes up 45% of the container width */
+  max-width: 500px;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   gap: 20px;
-  width: 100%; /* Ensure the form takes up full width inside the wrapper */
+}
+
+/* Heading Styles */
+h2 {
+  color: #2d6a2f;
+  font-size: 2rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  width: 100%;
+}
+
+/* Form Styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
 }
 
 /* Input Fields */
@@ -45,91 +51,109 @@ input[type="text"],
 input[type="email"],
 input[type="number"] {
   width: 100%;
-  padding: 10px;
+  padding: 14px;
   border: 1px solid #ddd;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 1rem;
+  background-color: #f5f5f5;
+  transition: all 0.3s ease;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
 input[type="number"]:focus {
   border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.2); /* Green glow */
   outline: none;
 }
 
 /* Submit Button */
 .submit-button {
-  padding: 12px 20px;
+  padding: 14px 24px;
   background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
   cursor: pointer;
-  width: 100%;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
+  width: fit-content;
+  font-weight: 600;
+  margin-top: 20px;
 }
 
 .submit-button:hover {
   background-color: #45a049;
+  /* transform: translateY(-3px); Slight lift effect */
 }
 
 .submit-button:focus {
   outline: none;
 }
 
-/* Displayed data list */
+/* Right Section (User List) */
 .data-list {
-  margin-top: 40px;
+  width: 50%; /* List takes up 50% of the container width */
+  max-width: 500px;
+  height: 70vh; /* Limit the height of the user list */
+  overflow-y: auto; /* Make it scrollable */
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap; /* Allow the cards to wrap */
   gap: 20px;
-  justify-content: center; /* Center the user cards */
-  width: fit-content;
 }
 
-/* Data item card styles */
+/* Data Item Cards */
 .data-item {
-  background-color: #7d7d7d;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-radius: 8px;
-  border: 2px solid black;
-  width: 280px;
+  background-color: #f8f8f8;
+  padding: 20px;
+  width: 100%;
+  border-radius: 12px;
+  border: 2px solid #ddd;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start; /* Align content to the left */
+  gap: 15px;
+  transition: all 0.3s ease;
 }
 
-/* User data text */
+.data-item:hover {
+  /* transform: translateY(-5px); Hover lift */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1); /* Darker shadow on hover */
+}
+
+/* User Data Text */
 .data-item p {
-  font-size: 1.1rem;
-  color: #fff;
+  font-size: 1rem;
+  color: #333;
   margin: 0;
-  flex-grow: 1;
+  line-height: 1.5;
 }
 
-/* Action buttons (Edit, Delete) */
+/* Action Buttons */
 .action-buttons {
   display: flex;
+  justify-content: space-between;
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 15px;
 }
 
-/* Edit and Delete buttons */
+/* Edit and Delete Buttons */
 .edit-button,
 .delete-button {
-  padding: 8px 15px;
+  padding: 12px 20px;
   font-size: 1rem;
-  border-radius: 6px;
+  border-radius: 8px;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  font-weight: 500;
+  width: 45%;
 }
 
 .edit-button {
@@ -139,6 +163,7 @@ input[type="number"]:focus {
 
 .edit-button:hover {
   background-color: #45a049;
+  /* transform: translateY(-2px); Slight lift effect */
 }
 
 .delete-button {
@@ -148,6 +173,15 @@ input[type="number"]:focus {
 
 .delete-button:hover {
   background-color: #e53935;
+  /* transform: translateY(-2px); Slight lift effect */
+}
+
+/* Additional Styling for Empty List */
+.data-list p {
+  font-size: 1.2rem;
+  color: #888;
+  text-align: center;
+  width: 100%;
 }
 
 /* Additional Styling for Form Validation */
@@ -159,4 +193,6 @@ input.error {
   color: #f44336;
   font-size: 0.875rem;
   margin-top: -12px;
+  font-weight: bold;
+  text-align: left;
 }
